@@ -16,10 +16,15 @@ $headerHeight: 30%;
 $bodyHeight: 40%;
 $footerHeight: 30%;
 
+@counter-style emojis {
+    system: cyclic;
+    symbols: "\01F680""\2753""\01F529""\01F4C8""\01F49A";
+    suffix: " ";
+}
 
 * {
-    padding: 0;
-    margin: 0;
+    // padding: 0;
+    // margin: 0;
     font-style: normal;
     font-weight: normal;
     font-family: $font;
@@ -82,7 +87,7 @@ a:hover {
 
             li {
                 display: list-item;
-                list-style: none;
+                list-style: emojis;
                 padding: 5px 0;
                 color: $textColor;
                 font-size: 18px;
@@ -94,6 +99,7 @@ a:hover {
     .footer {
         ul {
             width: 50%;
+            padding: 0;
 
             li {
                 display: list-item;
