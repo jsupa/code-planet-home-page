@@ -1,0 +1,122 @@
+//colors
+
+$backgroundColor: #161B22;
+$headerTextColor: #fff;
+$textColor: #C9D1D9;
+$linkColor: #B5B4F2;
+$redTextColor: #F29595;
+
+$font: Menlo;
+
+//section size
+$maxBodyWith: 1000px;
+$maxBodyHeight: 800px;
+
+$headerHeight: 30%;
+$bodyHeight: 40%;
+$footerHeight: 30%;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-family: $font;
+}
+
+body {
+    background: $backgroundColor;
+    padding: 0 40px;
+}
+
+a {
+    color: $linkColor;
+    text-decoration: none;
+    position: relative;
+    transition: color .3s;
+}
+
+a::after {
+    content: "";
+    background: $linkColor;
+    width: calc(100% + 10px);
+    z-index: -1;
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: -5px;
+    transition: all .3s;
+}
+
+a:hover::after {
+    height: calc(100% + 8px)
+}
+
+a:hover {
+    color: $backgroundColor;
+}
+
+#main {
+    display: grid;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    max-width: $maxBodyWith;
+    max-height: $maxBodyHeight;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    align-items: center;
+
+    .header {
+        h1 {
+            font-size: 40px;
+            letter-spacing: 0.03em;
+            color: $headerTextColor;
+        }
+    }
+
+    .body {
+        ul {
+
+            li {
+                display: list-item;
+                list-style: none;
+                padding: 5px 0;
+                color: $textColor;
+                font-size: 18px;
+                letter-spacing: 0.04em;
+            }
+        }
+    }
+
+    .footer {
+        ul {
+            width: 50%;
+
+            li {
+                display: list-item;
+                list-style: none;
+                color: $redTextColor;
+                font-size: 14px;
+                letter-spacing: 0.04em;
+
+                &:first-child {
+                    padding-bottom: 20px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    a:hover::after {
+        height: 0
+    }
+
+    a:hover {
+        color: $linkColor;
+    }
+}
