@@ -1,9 +1,4 @@
 @charset "UTF-8";
-@counter-style emojis {
-  system: cyclic;
-  symbols: "🚀" "❓" "🔩" "📈" "💚";
-  suffix: " ";
-}
 * {
   font-style: normal;
   font-weight: normal;
@@ -43,6 +38,7 @@ a:hover {
 }
 
 #main {
+  font-size: 1em;
   display: grid;
   margin: 0 auto;
   width: 100%;
@@ -55,17 +51,31 @@ a:hover {
   align-items: center;
 }
 #main .header h1 {
-  font-size: 40px;
+  font-size: 2em;
   letter-spacing: 0.03em;
   color: #fff;
 }
 #main .body ul li {
   display: list-item;
-  list-style: emojis;
   padding: 5px 0;
   color: #C9D1D9;
-  font-size: 18px;
+  font-size: 1em;
   letter-spacing: 0.04em;
+}
+#main .body ul li:nth-child(1) {
+  list-style: "🚀 ";
+}
+#main .body ul li:nth-child(2) {
+  list-style: "❓ ";
+}
+#main .body ul li:nth-child(3) {
+  list-style: "🔩 ";
+}
+#main .body ul li:nth-child(4) {
+  list-style: "📈 ";
+}
+#main .body ul li:nth-child(5) {
+  list-style: "💚 ";
 }
 #main .footer ul {
   width: 50%;
@@ -75,20 +85,28 @@ a:hover {
   display: list-item;
   list-style: none;
   color: #F29595;
-  font-size: 14px;
+  font-size: 0.8em;
   letter-spacing: 0.04em;
 }
 #main .footer ul li:first-child {
   padding-bottom: 20px;
-  font-size: 15px;
+  font-size: 1em;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   a:hover::after {
     height: 0;
   }
 
   a:hover {
     color: #B5B4F2;
+  }
+
+  .footer ul {
+    width: 100% !important;
+  }
+
+  body {
+    padding: 0 10px;
   }
 }

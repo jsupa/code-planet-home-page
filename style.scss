@@ -7,20 +7,10 @@ $linkColor: #B5B4F2;
 $redTextColor: #F29595;
 
 $font: Menlo;
-
+$fontSize: 1em;
 //section size
 $maxBodyWith: 1000px;
 $maxBodyHeight: 800px;
-
-$headerHeight: 30%;
-$bodyHeight: 40%;
-$footerHeight: 30%;
-
-@counter-style emojis {
-    system: cyclic;
-    symbols: "\01F680""\2753""\01F529""\01F4C8""\01F49A";
-    suffix: " ";
-}
 
 * {
     // padding: 0;
@@ -63,6 +53,7 @@ a:hover {
 }
 
 #main {
+    font-size: $fontSize;
     display: grid;
     margin: 0 auto;
     width: 100%;
@@ -76,7 +67,7 @@ a:hover {
 
     .header {
         h1 {
-            font-size: 40px;
+            font-size: 2em;
             letter-spacing: 0.03em;
             color: $headerTextColor;
         }
@@ -87,11 +78,31 @@ a:hover {
 
             li {
                 display: list-item;
-                list-style: emojis;
                 padding: 5px 0;
                 color: $textColor;
-                font-size: 18px;
+                font-size: 1em;
                 letter-spacing: 0.04em;
+
+                &:nth-child(1) {
+                    list-style: "\01F680  ";
+                }
+
+                &:nth-child(2) {
+                    list-style: "\2753  ";
+                }
+
+                &:nth-child(3) {
+                    list-style: "\01F529  ";
+                }
+
+                &:nth-child(4) {
+                    list-style: "\01F4C8  ";
+                }
+
+                &:nth-child(5) {
+                    list-style: "\01F49A  ";
+
+                }
             }
         }
     }
@@ -105,24 +116,34 @@ a:hover {
                 display: list-item;
                 list-style: none;
                 color: $redTextColor;
-                font-size: 14px;
+                font-size: 0.8em;
                 letter-spacing: 0.04em;
 
                 &:first-child {
                     padding-bottom: 20px;
-                    font-size: 15px;
+                    font-size: 1em;
                 }
             }
         }
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
     a:hover::after {
         height: 0
     }
 
     a:hover {
         color: $linkColor;
+    }
+
+    .footer {
+        ul {
+            width: 100% !important;
+        }
+    }
+
+    body {
+        padding: 0 10px;
     }
 }
